@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+  <meta charset="UTF-8">
+  <title>Diskette</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="flex menu">
+    <span class="logo">Diskette</span>
+    <span class="funcoes"></span>
+    <span class="opcoes">
+      <span>download</span>
+      <span>Impressao</span>
+      <span>Compartilhar</span>
+    </span>
+  </div>
+  <div id="lista"></div>
+  <button id="btnEntregar">📤 Entregar para o próximo</button>
+
+  <script type="application/json" id="tarefas-data">[
+  {
+    "Segunda": [
+      {
+        "checkbox": false,
+        "label": "Fazer comida"
+      },
+      {
+        "checkbox": false,
+        "label": "Lavar a louça"
+      },
+      {
+        "checkbox": false,
+        "label": "Arrumar a cama"
+      },
+      {
+        "checkbox": false,
+        "label": "Regar as plantas"
+      },
+      {
+        "checkbox": false,
+        "label": "Tirar o lixo"
+      },
+      {
+        "checkbox": false,
+        "label": "Organizar geladeira"
+      },
+      {
+        "checkbox": false,
+        "label": "Limpar fogão e micro-ondas por dentro"
+      },
+      {
+        "checkbox": false,
+        "label": "Separar roupas para lavar"
+      },
+      {
+        "checkbox": false,
+        "label": "Revisar lista de compras da semana"
+      }
+    ]
+  },
+  {
+    "Terça": [
+      {
+        "checkbox": false,
+        "label": "Fazer comida"
+      },
+      {
+        "checkbox": false,
+        "label": "Lavar a louça"
+      },
+      {
+        "checkbox": false,
+        "label": "Arrumar a cama"
+      },
+      {
+        "checkbox": false,
+        "label": "Regar as plantas"
+      },
+      {
+        "checkbox": false,
+        "label": "Lavar roupas e estender"
+      },
+      {
+        "checkbox": false,
+        "label": "Organizar guarda-roupa"
+      },
+      {
+        "checkbox": false,
+        "label": "Limpar espelhos e vidros"
+      },
+      {
+        "checkbox": false,
+        "label": "Aspirar sofá ou colchão"
+      }
+    ]
+  },
+  {
+    "Quarta": [
+      {
+        "checkbox": false,
+        "label": "Fazer comida"
+      },
+      {
+        "checkbox": false,
+        "label": "Lavar a louça"
+      },
+      {
+        "checkbox": false,
+        "label": "Arrumar a cama"
+      },
+      {
+        "checkbox": false,
+        "label": "Regar as plantas"
+      },
+      {
+        "checkbox": false,
+        "label": "Tirar o lixo"
+      },
+      {
+        "checkbox": false,
+        "label": "Faxina leve no banheiro"
+      },
+      {
+        "checkbox": false,
+        "label": "Trocar toalhas e tapetes"
+      },
+      {
+        "checkbox": false,
+        "label": "Limpar portas e maçanetas"
+      },
+      {
+        "checkbox": false,
+        "label": "Revisar contas e documentos"
+      }
+    ]
+  },
+  {
+    "Quinta": [
+      {
+        "checkbox": false,
+        "label": "Fazer comida"
+      },
+      {
+        "checkbox": false,
+        "label": "Lavar a louça"
+      },
+      {
+        "checkbox": false,
+        "label": "Arrumar a cama"
+      },
+      {
+        "checkbox": false,
+        "label": "Regar as plantas"
+      },
+      {
+        "checkbox": false,
+        "label": "Consertar algo pendente"
+      },
+      {
+        "checkbox": false,
+        "label": "Organizar ferramentas"
+      },
+      {
+        "checkbox": false,
+        "label": "Limpar quintal ou área externa"
+      },
+      {
+        "checkbox": false,
+        "label": "Regar plantas com adubo"
+      }
+    ]
+  },
+  {
+    "Sexta": [
+      {
+        "checkbox": false,
+        "label": "Fazer comida"
+      },
+      {
+        "checkbox": false,
+        "label": "Lavar a louça"
+      },
+      {
+        "checkbox": false,
+        "label": "Arrumar a cama"
+      },
+      {
+        "checkbox": false,
+        "label": "Regar as plantas"
+      },
+      {
+        "checkbox": false,
+        "label": "Tirar o lixo"
+      },
+      {
+        "checkbox": false,
+        "label": "Limpar armários da cozinha"
+      },
+      {
+        "checkbox": false,
+        "label": "Organizar despensa"
+      },
+      {
+        "checkbox": false,
+        "label": "Lavar panos de prato"
+      },
+      {
+        "checkbox": false,
+        "label": "Fazer pré-preparo do fim de semana"
+      },
+      {
+        "checkbox": false,
+        "label": "Limpar geladeira por dentro"
+      }
+    ]
+  },
+  {
+    "Sabado": [
+      {
+        "checkbox": true,
+        "label": "Fazer comida"
+      },
+      {
+        "checkbox": true,
+        "label": "Lavar a louça"
+      },
+      {
+        "checkbox": true,
+        "label": "Arrumar a cama"
+      },
+      {
+        "checkbox": true,
+        "label": "Regar as plantas"
+      },
+      {
+        "checkbox": true,
+        "label": "Faxina completa nos cômodos principais"
+      },
+      {
+        "checkbox": true,
+        "label": "Limpar janelas e cortinas"
+      },
+      {
+        "checkbox": false,
+        "label": "Lavar área externa"
+      },
+      {
+        "checkbox": false,
+        "label": "Revisar pendências da semana"
+      }
+    ]
+  },
+  {
+    "Domingo": [
+      {
+        "checkbox": false,
+        "label": "Fazer comida"
+      },
+      {
+        "checkbox": false,
+        "label": "Lavar a louça"
+      },
+      {
+        "checkbox": true,
+        "label": "Arrumar a cama"
+      },
+      {
+        "checkbox": false,
+        "label": "Regar as plantas"
+      },
+      {
+        "checkbox": true,
+        "label": "Trocar lençóis e fronhas"
+      },
+      {
+        "checkbox": false,
+        "label": "Organizar a casa para a semana"
+      },
+      {
+        "checkbox": false,
+        "label": "Planejar refeições e lista de compras"
+      },
+      {
+        "checkbox": false,
+        "label": "Autocuidado funcional (barbear, cortar unhas, revisar roupas)"
+      }
+    ]
+  }
+]</script>
+
+  <script>
+    let tarefas = JSON.parse(document.getElementById("tarefas-data").textContent);
+
+    function montarLista(json) {
+      console.clear();
+      console.log("🔄 Iniciando renderização...");
+      const div = document.getElementById("lista");
+      div.innerHTML = "";
+
+      json.forEach((formulario) => {
+        const nome = Object.keys(formulario)[0];
+        const campos = formulario[nome];
+        console.log(`📂 Formulário: ${nome}`);
+
+        const titulo = document.createElement("h2");
+        titulo.textContent = nome;
+        div.appendChild(titulo);
+
+        campos.forEach((campo, index) => {
+          const tipo = Object.keys(campo)[0];
+          const valor = campo[tipo];
+          console.log(`   ➕ Campo ${index + 1}: tipo=${tipo}`, campo);
+
+          if (tipo === "br") {
+            div.appendChild(document.createElement("br"));
+            return;
+          }
+
+          const wrapper = document.createElement("div");
+          wrapper.className = "campo";
+
+          const input = document.createElement("input");
+          input.type = tipo;
+          input.id = `${nome}_${index}`;
+
+          // Define valor inicial
+          if (typeof valor === "boolean") {
+            input.checked = valor;
+          } else if (typeof valor === "string") {
+            input.value = valor;
+          }
+
+          // Aplica outros atributos extras
+          for (let prop in campo) {
+            if (prop !== tipo && prop !== "label") {
+              input.setAttribute(prop, campo[prop]);
+            }
+          }
+
+          // Atualiza o JSON em memória quando o usuário interagir
+          input.addEventListener("input", () => {
+            if (tipo === "checkbox") {
+              campo[tipo] = input.checked;
+            } else {
+              campo[tipo] = input.value;
+            }
+            console.log(`📝 Atualizado: ${nome} -> ${campo.label || tipo} = ${campo[tipo]}`);
+          });
+
+          // Cria label se existir
+          if ("label" in campo) {
+            const label = document.createElement("label");
+            label.textContent = campo.label;
+            label.htmlFor = input.id;
+            if (tipo === "checkbox") {
+              wrapper.appendChild(input);
+              wrapper.appendChild(label);
+            } else {
+              wrapper.appendChild(label);
+              wrapper.appendChild(input);
+            }
+          } else {
+            wrapper.appendChild(input);
+          }
+
+          div.appendChild(wrapper);
+        });
+      });
+
+      console.log("✅ Renderização concluída!");
+    }
+
+  function entregar() {
+  // limpa antes de clonar
+  document.getElementById("lista").innerHTML = "";
+  // Clona o documento atual
+  const clone = document.documentElement.cloneNode(true);
+
+  // Atualiza somente o bloco de dados com o estado atual
+  const dataTag = clone.querySelector("#tarefas-data");
+  dataTag.textContent = JSON.stringify(tarefas, null, 2);
+
+  // Serializa com DOCTYPE e baixa
+  const html = "<!DOCTYPE html>\n" + clone.outerHTML;
+  const blob = new Blob([html], { type: "text/html" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "lista_atualizada.html";
+  a.click();
+  montarLista(tarefas);
+}
+
+  document.getElementById("btnEntregar").addEventListener("click", entregar);
+  montarLista(tarefas);
+</script>
+
+</body></html>

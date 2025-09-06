@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop</title>
+</head>
+
+<body>
+    <script>
+        const dkt_4pp = [
+            //local onde vai ter o json do usuário
+            {
+                "html": [
+                    {
+                        "div": {
+                            "id": "formulario",
+                            "children": [
+                                {
+                                    "h1": {
+                                        "textContent": "Formulário de Contato"
+                                    }
+                                },
+                                {
+                                    "form": {
+                                        "id": "contactForm",
+                                        "children": [
+                                            {
+                                                "label": {
+                                                    "for": "name",
+                                                    "textContent": "Nome:"
+                                                }
+                                            },
+                                            {
+                                                "input": {
+                                                    "type": "text",
+                                                    "id": "name",
+                                                    "name": "name",
+                                                    "required": true
+                                                }
+                                            },
+                                            {
+                                                "label": {
+                                                    "for": "email",
+                                                    "textContent": "Email:"
+                                                }
+                                            },
+                                            {
+                                                "input": {
+                                                    "type": "email",
+                                                    "id": "email",
+                                                    "name": "email",
+                                                    "required": true
+                                                }
+                                            },
+                                            {
+                                                "label": {
+                                                    "for": "message",
+                                                    "textContent": "Mensagem:"
+                                                }
+                                            },
+                                            {
+                                                "textarea": {
+                                                    "id": "message",
+                                                    "name": "message",
+                                                    "rows": 4,
+                                                    "required": true
+                                                }
+                                            },
+                                            {
+                                                "button": {
+                                                    "type": "submit",
+                                                    "textContent": "Enviar"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "css": [
+                    {
+                        "style": {
+                            "textContent": `
+                            #formulario {
+                                max-width: 400px;
+                                margin: 40px auto;
+                                padding: 24px;
+                                background: #fff;
+                                border-radius: 8px;
+                                box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+                                font-family: Arial, sans-serif;
+                            }
+                            #formulario h1 {
+                                font-size: 1.5em;
+                                margin-bottom: 16px;
+                                color: #333;
+                                text-align: center;
+                            }
+                            #formulario label {
+                                display: block;
+                                margin-bottom: 6px;
+                                color: #444;
+                                font-weight: bold;
+                            }
+                            #formulario input,
+                            #formulario textarea {
+                                width: 100%;
+                                padding: 8px 10px;
+                                margin-bottom: 16px;
+                                border: 1px solid #bbb;
+                                border-radius: 4px;
+                                font-size: 1em;
+                                box-sizing: border-box;
+                                background: #fafafa;
+                            }
+                            #formulario button[type="submit"] {
+                                width: 100%;
+                                padding: 10px;
+                                background: #1976d2;
+                                color: #fff;
+                                border: none;
+                                border-radius: 4px;
+                                font-size: 1.1em;
+                                cursor: pointer;
+                                transition: background 0.2s;
+                            }
+                            #formulario button[type="submit"]:hover {
+                                background: #125ea7;
+                            }
+                            `
+                        }
+                    }
+                ]
+            }
+        ];
+
+        const appFormulario = [
+            {
+                "html": [
+                    {
+                        "div": {
+                            "class": "app",
+                            "children": [
+                                { "h2": { "textContent": "Formulário App 1" } },
+                                { "label": { "for": "nome1", "textContent": "Nome:" } },
+                                { "input": { "type": "text", "id": "nome1" } },
+                                { "br": {} },
+                                { "label": { "for": "idade1", "textContent": "Idade:" } },
+                                { "input": { "type": "number", "id": "idade1" } },
+                                { "br": {} },
+                                {
+                                    "button": {
+                                        "textContent": "Enviar",
+                                        "onclick": `teste();`
+                                    }
+                                }
+                            ]
+                        }
+                    }]
+            },
+            {
+                "js": [
+                    {
+                        "script": {
+                            "type": "text/javascript",
+                            "textContent": `
+                            function teste() {
+                                const nome = document.getElementById('nome1').value;
+                                const idade = document.getElementById('idade1').value;
+                                alert('Nome: ' + nome + '\\nIdade: ' + idade);
+                            }
+                            `
+                        }
+                    }
+                ]
+            }
+        ]
+
+        const dkt_S0 = [
+            {
+                "dkt_html": [
+                    {
+                        "div": {
+                            "id": "dkt_D2skt4p",
+                            "class": "dkt_D2skt4p",
+                            "children": [
+                                {
+                                    "div": {
+                                        "id": "dkt_L4g4",
+                                        "class": "dkt_3c4n2M",
+                                        "children": [
+                                            {
+                                                "img": {
+                                                    id: "dkt_img_l4g4",
+                                                    "class": "dkt_3c4n2M",
+                                                    "src": "https://aliancadev.netlify.app/img/logo%20minimalista.png",
+                                                    "width": "32",
+                                                    "height": "32"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "div": {
+                                        "id": "dkt_N4m2_1rq53v4"
+                                    }
+                                },
+                                {
+                                    "div": {
+                                        "id": "dkt_4p3c02s",
+                                        "children": [
+                                            {
+                                                "button": {
+                                                    "id": "dkt_btnD4wnl41d",
+                                                    "children": [
+                                                        {
+                                                            "svg": {
+                                                                "width": "24",
+                                                                "height": "24",
+                                                                "viewBox": "0 0 24 24",
+                                                                "fill": "none",
+                                                                "children": [
+                                                                    {
+                                                                        "path": {
+                                                                            "d": "M12 16L12 4M12 16L8 12M12 16L16 12",
+                                                                            "stroke": "black",
+                                                                            "stroke-width": "2"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "rect": {
+                                                                            "x": "4",
+                                                                            "y": "18",
+                                                                            "width": "16",
+                                                                            "height": "2",
+                                                                            "fill": "black"
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "div": {
+                            "id": "dkt_Dr1v3r"
+                        }
+                    }
+                ]
+            },
+            {
+                "dkt_css": [
+                    {
+                        "style": {
+                            "textContent": `   
+                                #dkt_D2skt4p { position: fixed; bottom: 10px; left: 10px; display: flex; align-items: center; background: rgba(255, 255, 255, 0.8); border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 5px; font-family: Arial, sans-serif; }
+                                #dkt_L4g4 { margin-right: 10px; }
+                                #dkt_img_l4g4 { display: block; }
+                                #dkt_N4m2_1rq53v4 { flex-grow: 1; }
+                                #dkt_4p3c02s { display: flex; gap: 10px; }
+                                #dkt_btnD4wnl41d { background: none; border: none; cursor: pointer; padding: 5px; border-radius: 4px; transition: background-color 0.3s; }
+                                #dkt_btnD4wnl41d:hover { background-color: rgba(0, 0, 0, 0.1); }
+                            `
+                        }
+                    }
+                ]
+            },
+            {
+                "dkt_js": [
+                    {
+                        "script": {
+                            "type": "text/javascript",
+                            "textContent": `
+                                
+                            `
+                        }
+                    }
+                ]
+            }
+        ];
+
+        // Função genérica de renderização
+        function dkt_r3nd3r(dkt_bl0c0s, dkt_c0nt41n3r) {
+            dkt_bl0c0s.forEach(dkt_bl0c0 => {
+                Object.entries(dkt_bl0c0).forEach(([dkt_k3y, dkt_v4l]) => {
+                    if (Array.isArray(dkt_v4l)) {
+                        dkt_v4l.forEach(dkt_1t3m => {
+                            const [dkt_t4g, dkt_pr0ps] = Object.entries(dkt_1t3m)[0];
+                            const dkt_2l = dkt_d3sp4ch(dkt_t4g, dkt_pr0ps);
+                            if (dkt_2l) dkt_c0nt41n3r.appendChild(dkt_2l);
+                        });
+                    }
+                });
+            });
+        }
+
+        // Maestro: renderiza OS e depois o app do usuário
+        function dkt_b10s(dkt_S0, dkt_4pps) {
+            document.body.innerHTML = "";
+            dkt_r3nd3r(dkt_S0, document.body);
+
+            setTimeout(() => {
+                const dkt_dr1v3r = document.getElementById("dkt_Dr1v3r");
+                if (dkt_dr1v3r) {
+                    dkt_dr1v3r.innerHTML = "";
+
+                    // Garante que dkt_4pps seja sempre um array de apps
+                    const apps = Array.isArray(dkt_4pps[0]) ? dkt_4pps : [dkt_4pps];
+
+                    apps.forEach((app, idx) => {
+                        // Cria um container para cada app
+                        const appContainer = document.createElement("div");
+                        appContainer.className = "dkt_appWindow";
+                        appContainer.id = "dkt_app_" + idx;
+
+                        // Renderiza o app dentro desse container
+                        dkt_r3nd3r(app, appContainer);
+
+                        // Adiciona no driver
+                        dkt_dr1v3r.appendChild(appContainer);
+                    });
+                }
+            }, 0);
+        }
+
+        // Despacha para o músico certo
+        function dkt_d3sp4ch(dkt_t4g, dkt_pr0ps, dkt_p4r3ntT4g) {
+            if (dkt_t4g === "style") return dkt_styl3(dkt_pr0ps);
+            if (dkt_t4g === "script") return dkt_scr1pt(dkt_pr0ps);
+            if (dkt_t4g === "svg") return dkt_svg(dkt_t4g, dkt_pr0ps);
+            return dkt_3l3m(dkt_t4g, dkt_pr0ps, dkt_p4r3ntT4g);
+        };
+
+        // Músico: STYLE
+        function dkt_styl3(dkt_pr0ps) {
+            const dkt_style = document.createElement("style");
+            if (dkt_pr0ps.textContent || dkt_pr0ps.text) dkt_style.textContent = dkt_pr0ps.textContent || dkt_pr0ps.text;
+            document.head.appendChild(dkt_style);
+        };
+
+        // Músico: SCRIPT
+        function dkt_scr1pt(dkt_pr0ps) {
+            const dkt_script = document.createElement("script");
+            for (const dkt_k3y in dkt_pr0ps) {
+                if (dkt_k3y !== "textContent" && dkt_k3y !== "text") dkt_script.setAttribute(dkt_k3y, dkt_pr0ps[dkt_k3y]);
+            }
+            dkt_script.textContent = dkt_pr0ps.textContent || dkt_pr0ps.text || "";
+            document.body.appendChild(dkt_script);
+        };
+
+        // Músico: SVG (e filhos)
+        function dkt_svg(dkt_t4g, dkt_pr0ps, dkt_p4r3ntT4g) {
+            return dkt_3l3m(dkt_t4g, dkt_pr0ps, dkt_p4r3ntT4g, true);
+        };
+
+        // Músico: Elemento genérico (HTML ou SVG)
+        function dkt_3l3m(dkt_t4g, dkt_pr0ps, dkt_p4r3ntT4g, dkt_f0rc3SVG = false) {
+            const dkt_svgT4gs = ["svg", "path", "rect", "circle", "ellipse", "line", "polygon", "polyline", "g", "defs", "marker", "text"];
+            const dkt_1sSVG = dkt_f0rc3SVG || dkt_svgT4gs.includes(dkt_t4g) || dkt_svgT4gs.includes(dkt_p4r3ntT4g);
+
+            const dkt_2l = dkt_1sSVG
+                ? document.createElementNS("http://www.w3.org/2000/svg", dkt_t4g)
+                : document.createElement(dkt_t4g);
+
+            for (const dkt_k3y in dkt_pr0ps) {
+                if (dkt_k3y === "children" || dkt_k3y === "textContent" || dkt_k3y === "text" || dkt_k3y === "style") continue;
+                if (dkt_k3y.startsWith("on") && typeof dkt_pr0ps[dkt_k3y] === "function") {
+                    dkt_2l[dkt_k3y.toLowerCase()] = dkt_pr0ps[dkt_k3y];
+                } else if (typeof dkt_pr0ps[dkt_k3y] !== "object") {
+                    dkt_2l.setAttribute(dkt_k3y, dkt_pr0ps[dkt_k3y]);
+                }
+            }
+
+            if (dkt_pr0ps.style && typeof dkt_pr0ps.style === "object") {
+                Object.assign(dkt_2l.style, dkt_pr0ps.style);
+            }
+
+            if (dkt_pr0ps.textContent || dkt_pr0ps.text) {
+                dkt_2l.textContent = dkt_pr0ps.textContent || dkt_pr0ps.text;
+            }
+
+            if (dkt_pr0ps.children && Array.isArray(dkt_pr0ps.children)) {
+                dkt_pr0ps.children.forEach(dkt_child => {
+                    const [dkt_chT4g, dkt_chPr0ps] = Object.entries(dkt_child)[0];
+                    const dkt_ch3l = dkt_d3sp4ch(dkt_chT4g, dkt_chPr0ps, dkt_t4g);
+                    if (dkt_ch3l) dkt_2l.appendChild(dkt_ch3l);
+                });
+            }
+
+            // Removido o appendChild aqui!
+            return dkt_2l;
+        };
+
+        // Chame o maestro!
+        dkt_b10s(dkt_S0, dkt_4pp);
+    </script>
+</body>
+
+</html>

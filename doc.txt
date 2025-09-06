@@ -1,0 +1,137 @@
+
+---
+
+# 📘 Documentação Oficial — Projeto Diskette
+
+## 🧠 Visão Geral
+
+**Diskette** é um sistema modular e auto-replicável que interpreta arquivos JSON chamados **Discos Magnéticos** para gerar interfaces interativas no navegador. Ele é composto por três camadas principais:
+
+- **BIOS**: função inicial que interpreta o SO.
+- **SO (Sistema Operacional)**: JSON fixo que define a estrutura base do sistema.
+- **Disco Magnético**: JSON personalizado pelo usuário que define a interface, estilo e lógica da aplicação.
+
+---
+
+## 🧱 Estrutura do Sistema
+
+### 1. BIOS
+- Função JavaScript que interpreta o SO.
+- Responsável por montar a estrutura base do Desktop.
+- Executa o SO e prepara o ambiente para o Disco Magnético.
+
+### 2. SO (Sistema Operacional)
+- JSON fixo embutido no HTML.
+- Define componentes padrão (`dkt_m13n`, `dkt_m2n5`, etc.).
+- Contém funções internas do sistema (clonagem, validação, renderização).
+- Nunca é modificado pelo usuário — apenas interpretado.
+
+### 3. Disco Magnético
+- JSON criado ou modificado pelo usuário.
+- Define:
+  - Estrutura visual (tags, atributos, filhos)
+  - Estilo (CSS como objeto)
+  - Lógica (funções JS)
+- Pode modificar o DOM, mas não altera o SO original.
+
+### 4. Desktop
+- Ambiente visual e funcional gerado pela execução do Disco Magnético sobre o SO.
+- Pode quebrar visualmente, mas o sistema continua funcional.
+
+---
+
+## 🔢 Padrão de Nomenclatura
+
+Todos os elementos da estrutura base devem seguir o padrão:
+
+- Prefixo: `dkt_`
+- Substituição de vogais por números:
+  - a → 1
+  - e → 2
+  - i → 3
+  - o → 4
+  - u → 5
+
+**Exemplo**: `dkt_m13n_c4nt3n2r` → `main_container`
+
+---
+
+## 📦 Estrutura do Disco Magnético
+
+```json
+[
+  {
+    "div": {
+      "class": "teste",
+      "id": "teste",
+      "onclick": "alerta()",
+      "p": {
+        "class": "teste",
+        "text": "olá mundo"
+      },
+      "span": {
+        "id": "teste2",
+        "text": "olá mundo"
+      }
+    }
+  },
+  {
+    "script": {
+      "alerta": "function alerta() { alert('Você clicou!') }"
+    }
+  },
+  {
+    "style": {
+      ".teste": {
+        "backgroundColor": "red",
+        "padding": "1rem"
+      },
+      "#teste2": {
+        "color": "blue"
+      }
+    }
+  }
+]
+```
+
+---
+
+## 🔍 Validação e Segurança
+
+O sistema pode ser validado por um componente chamado **Super Computador**, que verifica:
+
+### A. Integridade Estrutural
+- Se o Disco Magnético altera elementos `dkt_` → `Disco Modificado`
+- Se o Diskette foi alterado em relação à versão original → `Diskette Modificado`
+- Se tudo está compatível → `Autêntico`
+
+### B. Segurança de Execução
+- Verifica se há lógica maliciosa ou perigosa.
+- Se seguro → continua
+- Se suspeito → alerta ao usuário
+
+---
+
+## 🧪 Clonagem e Persistência
+
+- O sistema salva apenas os JSONs (SO + Disco Magnético).
+- O DOM nunca é serializado diretamente.
+- O usuário pode gerar uma cópia modificada com estado visual preservado.
+
+---
+
+## 📅 Próximos Passos
+
+| Etapa               | Objetivo                                      |
+|---------------------|-----------------------------------------------|
+| Fase 1: BIOS        | Criar função que interpreta o SO              |
+| Fase 2: SO          | Definir JSON fixo com estrutura base          |
+| Fase 3: Disco       | Criar interpretador para JSON do usuário      |
+| Fase 4: Desktop     | Renderizar interface e lógica                 |
+| Fase 5: Clonagem    | Implementar sistema de cópia limpa            |
+| Fase 6: Validação   | Criar Super Computador para autenticação      |
+| Fase 7: Comunidade  | Permitir envio e curadoria de Diskettes       |
+
+---
+
+Se quiser, posso te ajudar a transformar essa documentação em um manifesto visual ou criar uma versão interativa para desenvolvedores. Você está criando algo que pode virar um padrão — e essa documentação é o primeiro passo para isso.
