@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop</title>
+<style>   
+                                #dkt_D2skt4p { position: fixed; bottom: 10px; left: 10px; display: flex; align-items: center; background: rgba(255, 255, 255, 0.8); border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 5px; font-family: Arial, sans-serif; }
+                                #dkt_L4g4 { margin-right: 10px; }
+                                #dkt_img_l4g4 { display: block; }
+                                #dkt_N4m2_1rq53v4 { flex-grow: 1; }
+                                #dkt_4p3c02s { display: flex; gap: 10px; }
+                                #dkt_btnD4wnl41d { background: none; border: none; cursor: pointer; padding: 5px; border-radius: 4px; transition: background-color 0.3s; }
+                                #dkt_btnD4wnl41d:hover { background-color: rgba(0, 0, 0, 0.1); }
+                            </style><style>
+                            #formulario {
+                                max-width: 400px;
+                                margin: 40px auto;
+                                padding: 24px;
+                                background: #fff;
+                                border-radius: 8px;
+                                box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+                                font-family: Arial, sans-serif;
+                            }
+                            #formulario h1 {
+                                font-size: 1.5em;
+                                margin-bottom: 16px;
+                                color: #333;
+                                text-align: center;
+                            }
+                            #formulario label {
+                                display: block;
+                                margin-bottom: 6px;
+                                color: #444;
+                                font-weight: bold;
+                            }
+                            #formulario input,
+                            #formulario textarea {
+                                width: 100%;
+                                padding: 8px 10px;
+                                margin-bottom: 16px;
+                                border: 1px solid #bbb;
+                                border-radius: 4px;
+                                font-size: 1em;
+                                box-sizing: border-box;
+                                background: #fafafa;
+                            }
+                            #formulario button[type="submit"] {
+                                width: 100%;
+                                padding: 10px;
+                                background: #1976d2;
+                                color: #fff;
+                                border: none;
+                                border-radius: 4px;
+                                font-size: 1.1em;
+                                cursor: pointer;
+                                transition: background 0.2s;
+                            }
+                            #formulario button[type="submit"]:hover {
+                                background: #125ea7;
+                            }
+                            </style></head>
+
+<body><div id="dkt_D2skt4p" class="dkt_D2skt4p">[]</div><div id="dkt_Dr1v3r"><div class="dkt_appWindow" id="dkt_app_0"><div id="formulario"><h1>Formulário de Contato</h1><form id="contactForm"><label for="name">Nome:</label><input type="text" id="name" name="name" required="true"><label for="email">Email:</label><input type="email" id="email" name="email" required="true"><label for="message">Mensagem:</label><textarea id="message" name="message" rows="4" required="true"></textarea><button type="submit">Enviar</button></form></div></div></div><script type="text/javascript">
+                                    function dkt_3ntr3g4r() {
+
+                                    // limpa antes de clonar
+                                    //document.getElementById("lista").innerHTML = "";
+                                    // Clona o documento atual
+                                    const dkt_cl0n3 = document.documentElement.cloneNode(true);
+                                    const tarefas = [];
+                                    // Atualiza somente o bloco de dados com o estado atual
+                                    const dkt_d4t4T4g = dkt_cl0n3.querySelector("#dkt_D2skt4p");
+                                    dkt_d4t4T4g.textContent = JSON.stringify(tarefas, null, 2);
+
+                                    // Serializa com DOCTYPE e baixa
+                                    const dkt_html = "<!DOCTYPE html>\n" + dkt_cl0n3.outerHTML
+
+                                    const dkt_bl0b = new Blob([dkt_html], { type: "text/html" });
+                                    const dkt_4 = document.createElement("a");
+                                    dkt_4.href = URL.createObjectURL(dkt_bl0b);
+                                    dkt_4.download = "NovoDiskette.html";
+                                    dkt_4.click();
+                                }
+                            </script>
+
+
+</body></html>

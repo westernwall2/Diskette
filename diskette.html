@@ -219,6 +219,7 @@
                                             {
                                                 "button": {
                                                     "id": "dkt_btnD4wnl41d",
+                                                    "onclick": "dkt_3ntr3g4r()",
                                                     "children": [
                                                         {
                                                             "svg": {
@@ -285,13 +286,39 @@
                         "script": {
                             "type": "text/javascript",
                             "textContent": `
-                                
+                                    function dkt_3ntr3g4r() {
+
+                                    // limpa antes de clonar
+                                    //document.getElementById("lista").innerHTML = "";
+                                    // Clona o documento atual
+                                    const dkt_cl0n3 = document.documentElement.cloneNode(true);
+                                    const tarefas = [];
+                                    // Atualiza somente o bloco de dados com o estado atual
+                                    const dkt_d4t4T4g = dkt_cl0n3.querySelector("#dkt_D2skt4p");
+                                    dkt_d4t4T4g.textContent = JSON.stringify(tarefas, null, 2);
+
+                                    // Serializa com DOCTYPE e baixa
+                                    const dkt_html = "<!DOCTYPE html>\\n" + dkt_cl0n3.outerHTML
+
+                                    const dkt_bl0b = new Blob([dkt_html], { type: "text/html" });
+                                    const dkt_4 = document.createElement("a");
+                                    dkt_4.href = URL.createObjectURL(dkt_bl0b);
+                                    dkt_4.download = "NovoDiskette.html";
+                                    dkt_4.click();
+                                }
                             `
                         }
                     }
                 ]
             }
         ];
+
+        let dkt_45t0IdC05nt3r = 0;
+
+        function dkt_g3n3r4t3A5t0Id() {
+            dkt_45t0IdC05nt3r++;
+            return "dkt_auto_" + dkt_45t0IdC05nt3r;
+        }
 
         // Função genérica de renderização
         function dkt_r3nd3r(dkt_bl0c0s, dkt_c0nt41n3r) {
@@ -300,8 +327,8 @@
                     if (Array.isArray(dkt_v4l)) {
                         dkt_v4l.forEach(dkt_1t3m => {
                             const [dkt_t4g, dkt_pr0ps] = Object.entries(dkt_1t3m)[0];
-                            const dkt_2l = dkt_d3sp4ch(dkt_t4g, dkt_pr0ps);
-                            if (dkt_2l) dkt_c0nt41n3r.appendChild(dkt_2l);
+                            const dkt_3l = dkt_d3sp4ch(dkt_t4g, dkt_pr0ps);
+                            if (dkt_3l) dkt_c0nt41n3r.appendChild(dkt_3l);
                         });
                     }
                 });
@@ -332,6 +359,9 @@
 
                         // Adiciona no driver
                         dkt_dr1v3r.appendChild(appContainer);
+                        // Vai guardar o app do usuário já com IDs aplicados
+                        window.dkt_currentApp = JSON.parse(JSON.stringify(dkt_4pp));
+                        //window.dkt_currentApps = dkt_4pps.map(app => JSON.parse(JSON.stringify(app)));
                     });
                 }
             }, 0);
@@ -372,37 +402,43 @@
             const dkt_svgT4gs = ["svg", "path", "rect", "circle", "ellipse", "line", "polygon", "polyline", "g", "defs", "marker", "text"];
             const dkt_1sSVG = dkt_f0rc3SVG || dkt_svgT4gs.includes(dkt_t4g) || dkt_svgT4gs.includes(dkt_p4r3ntT4g);
 
-            const dkt_2l = dkt_1sSVG
+            const dkt_3l = dkt_1sSVG
                 ? document.createElementNS("http://www.w3.org/2000/svg", dkt_t4g)
                 : document.createElement(dkt_t4g);
+            // Garantir ID
 
+            if (!dkt_pr0ps.id) {
+                dkt_pr0ps.id = dkt_g3n3r4t3A5t0Id();
+            }
+
+            //el.setAttribute("id", props.id);
             for (const dkt_k3y in dkt_pr0ps) {
                 if (dkt_k3y === "children" || dkt_k3y === "textContent" || dkt_k3y === "text" || dkt_k3y === "style") continue;
                 if (dkt_k3y.startsWith("on") && typeof dkt_pr0ps[dkt_k3y] === "function") {
-                    dkt_2l[dkt_k3y.toLowerCase()] = dkt_pr0ps[dkt_k3y];
+                    dkt_3l[dkt_k3y.toLowerCase()] = dkt_pr0ps[dkt_k3y];
                 } else if (typeof dkt_pr0ps[dkt_k3y] !== "object") {
-                    dkt_2l.setAttribute(dkt_k3y, dkt_pr0ps[dkt_k3y]);
+                    dkt_3l.setAttribute(dkt_k3y, dkt_pr0ps[dkt_k3y]);
                 }
             }
 
             if (dkt_pr0ps.style && typeof dkt_pr0ps.style === "object") {
-                Object.assign(dkt_2l.style, dkt_pr0ps.style);
+                Object.assign(dkt_3l.style, dkt_pr0ps.style);
             }
 
             if (dkt_pr0ps.textContent || dkt_pr0ps.text) {
-                dkt_2l.textContent = dkt_pr0ps.textContent || dkt_pr0ps.text;
+                dkt_3l.textContent = dkt_pr0ps.textContent || dkt_pr0ps.text;
             }
 
             if (dkt_pr0ps.children && Array.isArray(dkt_pr0ps.children)) {
                 dkt_pr0ps.children.forEach(dkt_child => {
                     const [dkt_chT4g, dkt_chPr0ps] = Object.entries(dkt_child)[0];
                     const dkt_ch3l = dkt_d3sp4ch(dkt_chT4g, dkt_chPr0ps, dkt_t4g);
-                    if (dkt_ch3l) dkt_2l.appendChild(dkt_ch3l);
+                    if (dkt_ch3l) dkt_3l.appendChild(dkt_ch3l);
                 });
             }
 
             // Removido o appendChild aqui!
-            return dkt_2l;
+            return dkt_3l;
         };
 
         // Chame o maestro!
